@@ -1,0 +1,13 @@
+/node_modules
+/dist
+/.vscode
+.editorconfig
+
+yarn.lock
+yarn-error.log
+
+.env
+
+/coverage
+/temp/*
+!temp/.gitkeep
