@@ -1,67 +1,38 @@
-<h1 align="center">Welcome to rentalx 👋</h1>
-<p>
-  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
-  <a href="https://github.com/ryanalencar/rentalx#readme" target="_blank">
-    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
-  </a>
-  <a href="https://github.com/ryanalencar/rentalx/graphs/commit-activity" target="_blank">
-    <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
-  </a>
-  <a href="#" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/github/license/ryanalencar/rentalx" />
-  </a>
-</p>
+<h1 align="center">
+    <img src="./github/assets/cover.png">
+</h1>
 
-> Nodejs API for car rental
+## Sobre o projeto
 
-## About the project
+API de aluguel de carros usando TypeScript seguindo padrões de código e princípios SOLID.
 
-Car rental API using TypeScript following code standards and SOLID principles.
+## Tecnologias
 
-## Technologies
+- [Express](https://expressjs.com/)
+- [TypeScript](https://www.typescriptlang.org/docs/)
+- [Docker](https://docs.docker.com/)
+- [PostgreSQL](https://www.postgresql.org/docs/)
+- [ESLint](https://eslint.org/docs/user-guide/getting-started)
+- [Prettier](https://prettier.io/docs/en/)
+- [Swagger](https://swagger.io/docs/)
+- [SOLID Principles](https://en.wikipedia.org/wiki/SOLID)
 
-- NodeJs
-- Express
-- Typescript
-- Docker
-- PostgreSQL
-- Eslint + Prettier
-- Swagger
-- SOLID Principles
-
-## Install
+## Instalação
 
 ```sh
 yarn
 ```
 
-## Usage
-
-```sh
-# Create and start containers
-docker-compose up
-
-# Run the migrations
-yarn typeorm:migration-run
-```
-
-## Documentation
+## Documentaçao
 
 ```sh
 http://localhost:[PORT]/api-docs/
 ```
 
-## Author
+### Contribuição
 
-👤 **Ryan Alencar**
+Contribuições são bem-vindas! Para contribuir, basta abrir uma issue ou pull request neste repositório.
 
-- Github: [@ryanalencar](https://github.com/ryanalencar)
-- LinkedIn: [@ryanalencar](https://linkedin.com/in/ryanalencar)
+### Autor
 
-## 🤝 Contributing
-
-Contributions, issues and feature requests are welcome!
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
+Feito por Mauricio Aires 👋🏽
