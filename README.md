@@ -41,12 +41,42 @@ $ docker build -t node-rentalx .
 # Listar os containers em execução
 $ docker ps
 
+# Listar os containers em execução ou não
+$ docker ps -a
+
+# Remover container (o container precisa está pausado)
+$ docker rm [id] or [name]
+
+# Iniciar container
+$ docker start [id] or [name]
+
+# Reiniciar container
+$ docker restart [id] or [name]
+
+# Reiniciar container
+$ docker stop [id] or [name]
+
+# Acessar o container (ctrl + d para sair)
+$ docker exec -it [id] or [name] /bin/bash
+
+# Exibir os logs de um container em background
+$ docker logs node-rentalx -f
+
 # Executar container em background
 # -p => realizar o direcionamento da porta do docker para o SO
 $ docker run -p 3333:3333 node-rentalx -d
 
-# Executar o docker-compose
-$ docker-compose up
+# Executar o docker-compose em background
+$ docker-compose up -d
+
+# Iniciar o serviço recuperando os dados já existentes
+$ docker-compose up -d
+
+# Pausar serviço
+$ docker-compose stop
+
+# Pausar serviço e excluir dados e containers
+$ docker-compose down
 ```
 
 ### Contribuição
