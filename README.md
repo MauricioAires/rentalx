@@ -45,6 +45,8 @@ $ docker ps
 # -p => realizar o direcionamento da porta do docker para o SO
 $ docker run -p 3333:3333 node-rentalx -d
 
+# Executar o docker-compose
+$ docker-compose up
 ```
 
 ### Contribuição
