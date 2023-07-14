@@ -4,7 +4,7 @@ import { createSpecificationController } from "../modules/cars/useCases/createSp
 
 const specificationsRouter = Router();
 
-const specificationRepository = new SpecificationRepository();
+const specificationRepository = SpecificationRepository.getInstance();
 
 specificationsRouter.post("/", (req, res) => {
   return createSpecificationController.handle(req, res);
