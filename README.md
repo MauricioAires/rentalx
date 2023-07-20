@@ -86,7 +86,12 @@ $ docker-compose down
 
 # Remover todos os contêineres, redes, volumes e imagens criados pelo docker-compose up
 $ docker-compose down -v --rmi local
-```
+
+# Comando para criar uma migration utilizando typeorm
+$ yarn typeorm migration:create -n CreateCategories
+
+# Comando para executar as migrations
+$ yarn typeorm migration:run
 
 ### Contribuição
 
@@ -95,3 +100,4 @@ Contribuições são bem-vindas! Para contribuir, basta abrir uma issue ou pull 
 ### Autor
 
 Feito por Mauricio Aires 👋🏽
+```
