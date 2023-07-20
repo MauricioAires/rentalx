@@ -62,21 +62,30 @@ $ docker exec -it [id] or [name] /bin/bash
 # Exibir os logs de um container em background
 $ docker logs node-rentalx -f
 
+# Exibir o IP do container
+$ docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' node-rentalx or [name]
+
 # Executar container em background
 # -p => realizar o direcionamento da porta do docker para o SO
 $ docker run -p 3333:3333 node-rentalx -d
 
 # Executar o docker-compose em background
-$ docker-compose up -d
+$ docker-compose up
+
+#  Forçar a recriação de todos os contêineres
+$ docker-compose up --force-recreate
 
 # Iniciar o serviço recuperando os dados já existentes
-$ docker-compose up -d
+$ docker-compose start
 
 # Pausar serviço
 $ docker-compose stop
 
 # Pausar serviço e excluir dados e containers
 $ docker-compose down
+
+# Remover todos os contêineres, redes, volumes e imagens criados pelo docker-compose up
+$ docker-compose down -v --rmi local
 ```
 
 ### Contribuição
