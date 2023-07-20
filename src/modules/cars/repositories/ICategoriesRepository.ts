@@ -1,6 +1,6 @@
 // DTO => Data transfer Object
 
-import { Category } from "../model/Category";
+import { Category } from "../entities/Category";
 
 export interface ICreateCategoryDTO {
   name: string;
