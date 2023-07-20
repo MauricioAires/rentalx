@@ -48,7 +48,9 @@ export class ImportCategoryUseCase {
     categories.forEach(async (category) => {
       const { name, description } = category;
 
-      const alreadyExistsCategory = this.categoriesRepository.findByName(name);
+      const alreadyExistsCategory = await this.categoriesRepository.findByName(
+        name,
+      );
 
       if (!alreadyExistsCategory) {
         this.categoriesRepository.create({

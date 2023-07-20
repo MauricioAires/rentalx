@@ -1,3 +1,4 @@
+import { Repository, getRepository } from "typeorm";
 import { Category } from "../../entities/Category";
 import {
   ICategoriesRepository,
@@ -17,40 +18,41 @@ import {
  */
 
 export class CategoriesRepository implements ICategoriesRepository {
-  private categories: Category[];
+  // private static INSTANCE: CategoriesRepository;
+  private repository: Repository<Category>;
 
-  private static INSTANCE: CategoriesRepository;
-
-  private constructor() {
-    this.categories = [];
+  constructor() {
+    this.repository = getRepository(Category);
   }
 
-  public static getInstance(): CategoriesRepository {
-    if (!CategoriesRepository.INSTANCE) {
-      CategoriesRepository.INSTANCE = new CategoriesRepository();
-    }
+  // public static getInstance(): CategoriesRepository {
+  //   if (!CategoriesRepository.INSTANCE) {
+  //     CategoriesRepository.INSTANCE = new CategoriesRepository();
+  //   }
 
-    return CategoriesRepository.INSTANCE;
-  }
+  //   return CategoriesRepository.INSTANCE;
+  // }
 
-  create({ description, name }: ICreateCategoryDTO): void {
-    const category = new Category();
-
-    // NOTE: Primeira vez que eu utilizo Object,assign
-    Object.assign(category, {
-      name,
+  async create({ description, name }: ICreateCategoryDTO): Promise<void> {
+    const category = this.repository.create({
       description,
-      created_at: new Date(),
+      name,
     });
 
-    this.categories.push(category);
+    await this.repository.save(category);
   }
 
-  findByName(name: string): Category {
-    return this.categories.find((category) => category.name === name);
+  async findByName(name: string): Promise<Category> {
+    const category = await this.repository.findOne({
+      name,
+    });
+
+    return category;
   }
 
-  list(): Category[] {
-    return this.categories;
+  async list(): Promise<Category[]> {
+    const categories = await this.repository.find();
+
+    return categories;
   }
 }
