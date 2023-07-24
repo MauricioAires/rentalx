@@ -63,11 +63,11 @@ $ docker exec -it [id] or [name] /bin/bash
 $ docker logs node-rentalx -f
 
 # Exibir o IP do container
-$ docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' node-rentalx or [name]
+$ docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' [name]
 
 # Executar container em background
 # -p => realizar o direcionamento da porta do docker para o SO
-$ docker run -p 3333:3333 node-rentalx -d
+$ docker run -p 3333:3333 [name] -d
 
 # Executar o docker-compose em background
 $ docker-compose up
@@ -92,6 +92,7 @@ $ yarn typeorm migration:create -n CreateCategories
 
 # Comando para executar as migrations
 $ yarn typeorm migration:run
+```
 
 ### Contribuição
 
@@ -100,4 +101,3 @@ Contribuições são bem-vindas! Para contribuir, basta abrir uma issue ou pull 
 ### Autor
 
 Feito por Mauricio Aires 👋🏽
-```
