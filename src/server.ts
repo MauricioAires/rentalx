@@ -20,3 +20,12 @@ app.use(router);
 app.use(handleAppErrors);
 
 app.listen(3333, () => console.log("server listening on port 3333"));
+/**
+ * Testes unitários
+ *  -
+ * Testes de Integração
+ * - Utiliza o banco de dados
+ * - Utiliza os serviços externos
+ *
+ * TDD - Tester Driver Development (Desenvolvimento dirigido por testes)
+ */
