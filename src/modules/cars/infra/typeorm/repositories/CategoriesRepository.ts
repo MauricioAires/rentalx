@@ -1,9 +1,9 @@
 import { Repository, getRepository } from "typeorm";
-import { Category } from "../../entities/Category";
+import { Category } from "../entities/Category";
 import {
   ICategoriesRepository,
   ICreateCategoryDTO,
-} from "../ICategoriesRepository";
+} from "../../../repositories/ICategoriesRepository";
 
 /**
  * NOTE: Os repositories são os arquivos que

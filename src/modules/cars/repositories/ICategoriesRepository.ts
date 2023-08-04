@@ -1,6 +1,6 @@
 // DTO => Data transfer Object
 
-import { Category } from "../entities/Category";
+import { Category } from "../infra/typeorm/entities/Category";
 
 export interface ICreateCategoryDTO {
   name: string;
