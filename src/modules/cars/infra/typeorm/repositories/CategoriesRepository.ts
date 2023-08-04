@@ -3,7 +3,7 @@ import { Category } from "../entities/Category";
 import {
   ICategoriesRepository,
   ICreateCategoryDTO,
-} from "../../../repositories/ICategoriesRepository";
+} from "@modules/cars/repositories/ICategoriesRepository";
 
 /**
  * NOTE: Os repositories são os arquivos que
