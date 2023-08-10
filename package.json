@@ -9,7 +9,8 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "docker:logs": "docker logs rentx",
-    "docker:restart": "docker restart rentx"
+    "docker:restart": "docker restart rentx",
+    "seed": "ts-node-dev src/shared/infra/typeorm/seed/admin.ts"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
