@@ -33,13 +33,15 @@ export class CategoriesRepository implements ICategoriesRepository {
   //   return CategoriesRepository.INSTANCE;
   // }
 
-  async create({ description, name }: ICreateCategoryDTO): Promise<void> {
+  async create({ description, name }: ICreateCategoryDTO): Promise<Category> {
     const category = this.repository.create({
       description,
       name,
     });
 
     await this.repository.save(category);
+
+    return category;
   }
 
   async findByName(name: string): Promise<Category> {

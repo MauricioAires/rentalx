@@ -12,11 +12,11 @@ export class CreateCategoryController {
      */
     const createCategoryUseCase = container.resolve(CreateCategoryUseCase);
 
-    await createCategoryUseCase.execute({
+    const category = await createCategoryUseCase.execute({
       name,
       description,
     });
 
-    return res.status(201).send();
+    return res.json(category);
   }
 }
