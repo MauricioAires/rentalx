@@ -61,9 +61,7 @@ http://localhost:[PORT]/api-docs/
 
 - **RF**
   - Deve ser possível cadastrar uma ou mais especificações para um carro
-  - Deve ser possível listar todas as especificações
   - Apenas usuários administradores pode cadastrar uma nova especificação
-  - Deve ser possível listar todos os carros
 - **RN**
   - Não deve ser possível cadastrar uma especificação para um carro não cadastrado
   - Não deve ser possível cadastrar especificações com nomes duplicados para um mesmo carro
