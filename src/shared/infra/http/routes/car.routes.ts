@@ -20,6 +20,11 @@ carsRoutes.post(
 
 carsRoutes.get("/available", listAvailableCar.handle);
 
-carsRoutes.get("/specifications/:id", crateCarSpecifications.handle);
+carsRoutes.post(
+  "/specifications/:id",
+  ensureAuthenticated,
+  ensureAdmin,
+  crateCarSpecifications.handle,
+);
 
 export { carsRoutes };
