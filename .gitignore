@@ -14,3 +14,4 @@ yarn-error.log
 
 tmp/avatar/*
 !tmp/avatar/.gitkeep
+!tmp/cars/.gitkeep
