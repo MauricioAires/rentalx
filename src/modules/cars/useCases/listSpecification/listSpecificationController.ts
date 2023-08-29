@@ -3,7 +3,7 @@ import { ListSpecificationUseCase } from "./listSpecificationUseCase";
 import { container } from "tsyringe";
 
 export class ListSpecificationController {
-  async handle(req: Request, res: Response): Response {
+  async handle(req: Request, res: Response): Promise<Response> {
     const listSpecificationUseCase = container.resolve(
       ListSpecificationUseCase,
     );
