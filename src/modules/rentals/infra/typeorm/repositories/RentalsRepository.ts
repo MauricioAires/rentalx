@@ -26,11 +26,17 @@ export class RentalsRepository implements IRentalsRepository {
     car_id,
     user_id,
     expected_return_date,
+    end_date,
+    id,
+    total,
   }: ICreateRentalDTO): Promise<Rental> {
     const rental = this.repository.create({
       user_id,
       car_id,
       expected_return_date,
+      end_date,
+      id,
+      total,
     });
 
     await this.repository.save(rental);
