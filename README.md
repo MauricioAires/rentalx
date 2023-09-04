@@ -100,7 +100,8 @@ http://localhost:[PORT]/api-docs/
   - Ao realizar a devolução, deverá ser calculado o total do aluguel
   - Cao o horário de devolução seja superior ao horário previsto de entrega, deverá ser cobrado
     multa proporcional aos dias de atraso.
-  - Cao haja multa, deverá ser somado ao total do aluguel
+  - Caso haja multa, deverá ser somado ao total do aluguel
+  - O usuário deve está logado na aplicação
 
 ### Comandos
 
