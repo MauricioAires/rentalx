@@ -87,6 +87,11 @@
         "tags": ["Category"],
         "summary": "Upload a new category",
         "description": "Upload a new category",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -114,6 +119,11 @@
         "tags": ["Specifications"],
         "summary": "Create specifications",
         "description": "Create a new specification",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -184,6 +194,35 @@
           }
         }
       }
+    },
+    "/cars": {
+      "post": {
+        "tags": ["Cars"],
+        "summary": "Create a new car",
+        "description": "Create a new car",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/Car"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Car already exists"
+          }
+        }
+      }
     }
   },
   "definitions": {
@@ -200,6 +239,41 @@
       "example": {
         "name": "Câmbio automático",
         "description": "Carro com câmbio automático"
+      }
+    },
+    "Car": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "daily_rate": {
+          "type": "number"
+        },
+        "license_plate": {
+          "type": "string"
+        },
+        "fine_amount": {
+          "type": "number"
+        },
+        "brand": {
+          "type": "string"
+        },
+        "category_id": {
+          "type": "string"
+        }
+      },
+      "example": {
+        "name": "Audi A3",
+        "description": "O novo Audi A3 Sedan foi projetado para uso intuitivo",
+        "daily_rate": 100,
+        "license_plate": "LVQ-2276",
+        "fine_amount": 10,
+        "brand": "Audi",
+        "category_id": "OUR_CATEGORY_UUID"
       }
     }
   },
