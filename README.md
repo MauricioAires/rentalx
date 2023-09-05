@@ -94,6 +94,7 @@ http://localhost:[PORT]/api-docs/
 - **RF**
   - Deve ser possível realizar a devolução de um carro
 - **RN**
+
   - Se o carro for devolvido com menos de 24 horas, deverá ser cobrado diário completa
   - Ao realizar a devolução, o carro deverá ser liberado para outro aluguel
   - Ao realizar a devolução, o carro deverá ser liberado para outro aluguel
@@ -102,6 +103,13 @@ http://localhost:[PORT]/api-docs/
     multa proporcional aos dias de atraso.
   - Caso haja multa, deverá ser somado ao total do aluguel
   - O usuário deve está logado na aplicação
+
+  **Listagem de alugueis para usuário**
+
+- **RF**
+  - Deve ser possível realizar a busca de todos os alugueis para o usuário
+- **RN**
+  - O Usuário deve estar logado na aplicação
 
 ### Comandos
 
