@@ -174,6 +174,9 @@ $ yarn typeorm migration:create -n CreateCategories
 
 # Comando para executar as migrations
 $ yarn typeorm migration:run
+
+# Desfazer a ultima migration
+$ yarn typeorm migration:revert
 ```
 
 ### Contribuição
