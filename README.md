@@ -16,6 +16,17 @@ API de aluguel de carros usando TypeScript seguindo padrões de código e princ�
 - [Prettier](https://prettier.io/docs/en/)
 - [Swagger](https://swagger.io/docs/)
 - [SOLID Principles](https://en.wikipedia.org/wiki/SOLID)
+- [bcrypt](https://github.com/kelektiv/node.bcrypt.js)
+- [csv-parse](https://csv.js.org/parse/)
+- [dayjs](https://day.js.org/en/)
+- [multer](https://github.com/expressjs/multer)
+- [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken)
+- [supertest](https://github.com/ladjs/supertest)
+- [tsyringe](https://github.com/microsoft/tsyringe)
+- [typeorm](https://typeorm.io/)
+- [uuid](https://github.com/uuidjs/uuid)
+- [Ethereal](https://ethereal.email/) Serviço SMTP falso, para testes de envido de e-mail
+- [Nodemailer](https://nodemailer.com/) Serviço SMTP falso, para testes de envido de e-mail
 
 ### Instalação
 
@@ -109,9 +120,18 @@ http://localhost:[PORT]/api-docs/
 - **RF**
   - Deve ser possível realizar a busca de todos os alugueis para o usuário
 - **RN**
+
   - O Usuário deve estar logado na aplicação
 
-### Comandos
+  **Recuperar Senha**
+
+- **RF**
+  - Deve ser possível o usuário recuperar a senha informando o e-mail
+  - O usuário deve receber um e-mail com o passo a passo para recuperar a recuperação da senha
+  - O usuário deve conseguir inserir uma nova senha
+- **RN**
+  - O Usuário precisa informar uma nova senha
+  - O link enviado para recuperação deve expirar em 3 horas Comandos
 
 ```bash
 # Versão do docker
