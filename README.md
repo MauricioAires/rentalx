@@ -27,6 +27,7 @@ API de aluguel de carros usando TypeScript seguindo padrões de código e princ�
 - [uuid](https://github.com/uuidjs/uuid)
 - [Ethereal](https://ethereal.email/) Serviço SMTP falso, para testes de envido de e-mail
 - [Nodemailer](https://nodemailer.com/) Serviço SMTP falso, para testes de envido de e-mail
+- [handlebarsjs](https://handlebarsjs.com/) Criar template de e-mail
 
 ### Instalação
 
