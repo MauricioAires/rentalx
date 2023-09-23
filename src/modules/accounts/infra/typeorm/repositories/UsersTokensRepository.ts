@@ -32,7 +32,7 @@ export class UsersTokensRepository implements IUsersTokensRepository {
   ): Promise<UserTokens> {
     return await this.repository.findOne({
       where: {
-        id: user_id,
+        user_id,
         refresh_token,
       },
     });
