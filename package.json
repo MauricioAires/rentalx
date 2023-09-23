@@ -10,7 +10,7 @@
     "test:watch": "NODE_ENV=test jest --watch --runInBand --detectOpenHandles",
     "docker:logs": "docker logs rentx",
     "docker:restart": "docker restart rentx",
-    "seed": "ts-node-dev src/shared/infra/typeorm/seed/admin.ts"
+    "seed": "ts-node-dev -r tsconfig-paths/register src/shared/infra/typeorm/seed/admin.ts"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
