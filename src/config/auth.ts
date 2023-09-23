@@ -1,7 +1,7 @@
 export default {
-  secret_token: "22d93c2a430a360d00ea2eaf25635381",
-  expires_token: "15m",
-  secrete_refresh_token: "fd254f723587bb77667619cb67142433",
-  expires_refresh_token: "30d",
-  expires_refresh_token_days: 30,
+  secret_token: process.env.SECRET_TOKEN,
+  expires_token: process.env.EXPIRES_TOKEN,
+  secrete_refresh_token: process.env.SECRET_REFRESH_TOKEN,
+  expires_refresh_token: process.env.EXPIRES_REFRESH_TOKEN,
+  expires_refresh_token_days: Number(process.env.EXPIRES_REFRESH_TOKEN_DAYS),
 };
