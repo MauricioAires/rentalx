@@ -44,8 +44,6 @@ export class AuthenticateUserUseCase {
       throw new AppError(`E-mail or password is incorrect`, 401);
     }
 
-    console.log(process.env.SECRET_TOKEN);
-
     const token = sign({}, process.env.SECRET_TOKEN, {
       subject: user.id,
       expiresIn: process.env.EXPIRES_TOKEN,

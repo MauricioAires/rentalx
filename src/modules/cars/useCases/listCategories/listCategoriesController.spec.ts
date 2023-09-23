@@ -46,7 +46,7 @@ describe("List Category Controller", () => {
         description: "Description Category Supertest",
       })
       .set({
-        Authorization: `Bearer ${token.token}`,
+        Authorization: `Bearer ${token.refresh_token}`,
       });
 
     const response = await request(app).get("/categories");
