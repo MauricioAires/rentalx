@@ -5,7 +5,7 @@ export interface IMailProvider {
   sendEmail(
     to: string,
     subject: string,
-    variables: Variables,
+    variables: SendEmailVariables,
     path: string,
   ): Promise<void>;
 }
