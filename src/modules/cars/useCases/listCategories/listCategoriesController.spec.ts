@@ -19,7 +19,7 @@ describe("List Category Controller", () => {
     await connection.runMigrations();
 
     const id = uuidV4();
-    const password = await hash("admin", 8);
+    const password = await hash("admin", Number(process.env.BYCRYPT_HASH_SALT));
     await connection.query(
       `INSERT INTO USERS(id, name, email,driver_license, password, is_admin)
          VALUES ('${id}', 'admin', 'admin@rentx.com.br','ABC123','${password}', true)`,

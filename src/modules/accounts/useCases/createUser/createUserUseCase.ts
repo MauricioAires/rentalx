@@ -28,7 +28,10 @@ export class CreateUserUseCase {
       throw new AppError(`E-mail ${email} already exists`);
     }
 
-    const passwordHash = await hash(password, 8);
+    const passwordHash = await hash(
+      password,
+      Number(process.env.BYCRYPT_HASH_SALT),
+    );
 
     await this.usersRepository.create({
       name,
