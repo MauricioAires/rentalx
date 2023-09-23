@@ -4,6 +4,9 @@ import { inject, injectable } from "tsyringe";
 
 import { AppError } from "@shared/errors/AppError";
 import { IUsersRepository } from "@modules/accounts/repositories/IUsersRepository";
+import { IUsersTokensRepository } from "@modules/accounts/repositories/IUsersTokensRepository";
+import auth from "@config/auth";
+import { IDateProvider } from "@shared/container/providers/DateProvider/IDateProvider";
 
 interface IRequest {
   email: string;
@@ -16,6 +19,7 @@ interface IResponse {
     email: string;
   };
   token: string;
+  refresh_token: string;
 }
 
 @injectable()
@@ -23,6 +27,10 @@ export class AuthenticateUserUseCase {
   constructor(
     @inject("UsersRepository")
     private usersRepository: IUsersRepository,
+    @inject("UsersTokensRepository")
+    private usersTokensRepository: IUsersTokensRepository,
+    @inject("DayjsDateProvider")
+    private dateProvider: IDateProvider,
   ) {}
   async execute({ email, password }: IRequest): Promise<IResponse> {
     const user = await this.usersRepository.findByEmail(email);
@@ -37,9 +45,26 @@ export class AuthenticateUserUseCase {
       throw new AppError(`E-mail or password is incorrect`, 401);
     }
 
-    const token = sign({}, "22d93c2a430a360d00ea2eaf25635381", {
+    const token = sign({}, auth.secret_token, {
       subject: user.id,
-      expiresIn: "1d",
+      expiresIn: auth.expires_token,
+    });
+
+    const refresh_token = sign(
+      {
+        email,
+      },
+      auth.secrete_refresh_token,
+      {
+        subject: user.id,
+        expiresIn: auth.expires_refresh_token,
+      },
+    );
+
+    await this.usersTokensRepository.create({
+      user_id: user.id,
+      expires_date: this.dateProvider.addDays(auth.expires_refresh_token_days),
+      refresh_token: refresh_token,
     });
 
     return {
@@ -48,6 +73,7 @@ export class AuthenticateUserUseCase {
         email: user.email,
         name: user.name,
       },
+      refresh_token,
     };
   }
 }
