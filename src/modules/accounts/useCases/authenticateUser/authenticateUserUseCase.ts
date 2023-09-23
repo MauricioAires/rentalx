@@ -5,7 +5,6 @@ import { inject, injectable } from "tsyringe";
 import { AppError } from "@shared/errors/AppError";
 import { IUsersRepository } from "@modules/accounts/repositories/IUsersRepository";
 import { IUsersTokensRepository } from "@modules/accounts/repositories/IUsersTokensRepository";
-import auth from "@config/auth";
 import { IDateProvider } from "@shared/container/providers/DateProvider/IDateProvider";
 
 interface IRequest {
@@ -45,25 +44,29 @@ export class AuthenticateUserUseCase {
       throw new AppError(`E-mail or password is incorrect`, 401);
     }
 
-    const token = sign({}, auth.secret_token, {
+    console.log(process.env.SECRET_TOKEN);
+
+    const token = sign({}, process.env.SECRET_TOKEN, {
       subject: user.id,
-      expiresIn: auth.expires_token,
+      expiresIn: process.env.EXPIRES_TOKEN,
     });
 
     const refresh_token = sign(
       {
         email,
       },
-      auth.secrete_refresh_token,
+      process.env.SECRET_REFRESH_TOKEN,
       {
         subject: user.id,
-        expiresIn: auth.expires_refresh_token,
+        expiresIn: process.env.EXPIRES_REFRESH_TOKEN,
       },
     );
 
     await this.usersTokensRepository.create({
       user_id: user.id,
-      expires_date: this.dateProvider.addDays(auth.expires_refresh_token_days),
+      expires_date: this.dateProvider.addDays(
+        Number(process.env.EXPIRES_REFRESH_TOKEN_DAYS),
+      ),
       refresh_token: refresh_token,
     });
 
