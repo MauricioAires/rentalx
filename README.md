@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img src="./github/assets/cover.png">
+    <img src="./.github/assets/cover.png">
 </h1>
 
 ### Sobre o projeto
@@ -28,6 +28,9 @@ API de aluguel de carros usando TypeScript seguindo padrões de código e princ�
 - [Ethereal](https://ethereal.email/) Serviço SMTP falso, para testes de envido de e-mail
 - [Nodemailer](https://nodemailer.com/) Serviço SMTP falso, para testes de envido de e-mail
 - [handlebarsjs](https://handlebarsjs.com/) Criar template de e-mail
+- [AWS SES](https://aws.amazon.com/pt/ses/)
+- [AWS S3](https://aws.amazon.com/pt/s3/)
+- [AWS EC2](hhttps://aws.amazon.com/pt/ec2/)
 
 ### Instalação
 
@@ -41,7 +44,10 @@ yarn
 http://localhost:[PORT]/api-docs/
 ```
 
-### Requisitos
+### Requisitos da aplicação
+
+<details>
+  <summary>Clique aqui para visualizar</summary>
 
 ```
  RF:  Requisitos Funcionais
@@ -133,6 +139,10 @@ http://localhost:[PORT]/api-docs/
 - **RN**
   - O Usuário precisa informar uma nova senha
   - O link enviado para recuperação deve expirar em 3 horas Comandos
+
+</details>
+
+### Comandos
 
 ```bash
 # Versão do docker
