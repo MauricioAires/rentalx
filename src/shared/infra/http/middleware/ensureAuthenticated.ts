@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import { verify } from "jsonwebtoken";
 import { AppError } from "@shared/errors/AppError";
-import { UsersTokensRepository } from "@modules/accounts/infra/typeorm/repositories/UsersTokensRepository";
+import { UsersRepository } from "@modules/accounts/infra/typeorm/repositories/UsersRepository";
 
 interface IPayload {
   sub: string;
@@ -23,14 +23,10 @@ export async function ensureAuthenticated(
   try {
     const { sub: user_id } = verify(
       token,
-      process.env.SECRET_REFRESH_TOKEN,
+      process.env.SECRET_TOKEN,
     ) as IPayload;
 
-    const usersRepository =
-      await new UsersTokensRepository().findByUserIdAndRefreshToken(
-        user_id,
-        token,
-      );
+    const usersRepository = await new UsersRepository().findById(user_id);
 
     if (!usersRepository) {
       throw new AppError("User does not exist", 401);
