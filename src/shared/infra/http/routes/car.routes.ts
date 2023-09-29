@@ -13,7 +13,7 @@ import multer from "multer";
 
 const carsRoutes = Router();
 
-const uploadCarImages = multer(upload.execute("./tmp/cars"));
+const uploadCarImages = multer(upload);
 
 const createCarController = new CreateCarController();
 const listAvailableCarController = new ListAvailableCarController();
