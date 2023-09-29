@@ -13,6 +13,10 @@ const config: Config = {
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
     prefix: "<rootDir>/src/",
   }),
+  collectCoverage: true,
+  collectCoverageFrom: ["<rootDir>/src/modules/**/useCases/**/*.ts"],
+  coverageDirectory: "coverage",
+  coverageReporters: ["lcov", "text-summary"],
 };
 
 export default config;
