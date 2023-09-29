@@ -1,3 +1,10 @@
 import { app } from "./app";
 
-app.listen(3333, () => console.log("server listening on port 3333"));
+app.listen(process.env.PORT, () =>
+  console.log(`server listening on port ${process.env.PORT}`),
+);
+
+/**
+ * O que são Storages
+ * - São armazenamentos específicos para upload de arquivos (S3 Amazon)
+ */
