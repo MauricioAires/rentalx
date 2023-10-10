@@ -31,6 +31,7 @@ API de aluguel de carros usando TypeScript seguindo padrões de código e princ�
 - [AWS SES](https://aws.amazon.com/pt/ses/)
 - [AWS S3](https://aws.amazon.com/pt/s3/)
 - [AWS EC2](hhttps://aws.amazon.com/pt/ec2/)
+- [Sentry](https://sentry.io/welcome/)
 
 ### Instalação
 
